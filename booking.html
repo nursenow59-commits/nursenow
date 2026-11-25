@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>احجز زيارة | NurseNow</title>
+<meta name="description" content="اطلب حجز تمريض منزلي من NurseNow في أبيس 2 والحسينية. النموذج يجهز رسالة واتساب، والموعد لا يُؤكد تلقائيًا.">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">تخطي إلى المحتوى</a>
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span>الإسكندرية: أبيس 2 والحسينية</span>
+    <span>كل يوم من 10 صباحًا إلى 10 مساءً</span>
+    <a href="https://wa.me/201224274670" target="_blank" rel="noopener noreferrer">01224274670</a>
+  </div>
+</div>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="logo" href="index.html">Nurse<span>Now</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+      القائمة
+    </button>
+    <nav id="site-nav" aria-label="التنقل الرئيسي">
+      <a href="index.html">الرئيسية</a>
+      <a href="services.html">الخدمات</a>
+      <a class="btn btn-small" href="booking.html" aria-current="page">احجز الآن</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section>
+    <div class="wrap">
+      <form id="booking-form" class="form-card" novalidate>
+        <h1>احجز خدمة</h1>
+        <p class="lead">املأ البيانات وسنجهز رسالة واتساب بالطلب. إرسال الرسالة لا يعني أن الحجز مؤكد؛ نتواصل معك خلال ساعات العمل لتأكيد الموعد.</p>
+        <p class="hint">الحقول ذات العلامة <span class="req">*</span> مطلوبة. الخدمة داخل أبيس 2 والحسينية، من 10 صباحًا إلى 10 مساءً.</p>
+        <div id="form-errors" class="notice notice-error" hidden role="alert"></div>
+        <div id="form-success" class="notice notice-ok" hidden role="status">
+          <p>تم تجهيز طلبك لواتساب. افتح الرسالة وأرسلها بنفسك. هذا ليس تأكيدًا للحجز؛ نراجع الطلب ونتواصل معك من 10 صباحًا إلى 10 مساءً.</p>
+          <p>إذا لم تُفتح نافذة واتساب، أرسل الرسالة من الزر التالي.</p>
+          <pre class="wa-preview" id="wa-preview"></pre>
+          <a class="btn btn-green" id="wa-fallback" href="https://wa.me/201224274670" target="_blank" rel="noopener noreferrer">إرسال الرسالة على واتساب</a>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="full-name">الاسم الكامل <span class="req" aria-hidden="true">*</span></label>
+            <input id="full-name" name="fullName" type="text" autocomplete="name" required aria-describedby="full-name-error">
+            <p class="field-error" id="full-name-error"></p>
+          </div>
+          <div class="field">
+            <label for="phone">رقم الهاتف / واتساب <span class="req" aria-hidden="true">*</span></label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="01xxxxxxxxx" required aria-describedby="phone-error">
+            <p class="field-error" id="phone-error"></p>
+          </div>
+          <div class="field field-wide">
+            <label for="service">الخدمة المطلوبة <span class="req" aria-hidden="true">*</span></label>
+            <select id="service" name="service" required aria-describedby="service-error">
+              <option value="">اختر الخدمة</option>
+              <option value="home-nursing">الرعاية التمريضية المنزلية</option>
+              <option value="elderly-care">رعاية كبار السن</option>
+              <option value="patient-assistance">مساعدة المريض</option>
+              <option value="post-surgical">الرعاية بعد العمليات</option>
+            </select>
+            <p class="field-error" id="service-error"></p>
+          </div>
+          <div class="field field-wide">
+            <label for="address">المنطقة / العنوان <span class="req" aria-hidden="true">*</span></label>
+            <input id="address" name="address" type="text" autocomplete="street-address" placeholder="مثال: أبيس 2، اسم الشارع" required aria-describedby="address-error">
+            <p class="field-error" id="address-error"></p>
+          </div>
+          <div class="field">
+            <label for="date">التاريخ المفضل <span class="req" aria-hidden="true">*</span></label>
+            <input id="date" name="date" type="date" required aria-describedby="date-error">
+            <p class="field-error" id="date-error"></p>
+          </div>
+          <div class="field">
+            <label for="time">الوقت المفضل <span class="req" aria-hidden="true">*</span></label>
+            <input id="time" name="time" type="time" required aria-describedby="time-hint time-error">
+            <p class="hint" id="time-hint">ساعات العمل من 10 صباحًا إلى 10 مساءً.</p>
+            <p class="field-error" id="time-error"></p>
+          </div>
+          <div class="field field-wide">
+            <label for="notes">ملاحظات مختصرة عن احتياجات المريض <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="notes" name="notes" required aria-describedby="notes-error"></textarea>
+            <p class="field-error" id="notes-error"></p>
+          </div>
+          <div class="field field-wide">
+            <button class="btn" type="submit">إرسال طلب الحجز</button>
+          </div>
+        </div>
+        <noscript>
+          <p>لتجهيز الرسالة من النموذج، فعّل JavaScript، أو راسلنا مباشرة على واتساب: <a href="https://wa.me/201224274670">01224274670</a>.</p>
+        </noscript>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="logo" href="index.html">Nurse<span>Now</span></a>
+      <p>رعاية تمريضية في بيتك، بسرعة وبكل اهتمام.</p>
+    </div>
+    <div>
+      <h2>الصفحات</h2>
+      <a href="index.html">الرئيسية</a>
+      <a href="services.html">الخدمات</a>
+      <a href="booking.html">احجز الآن</a>
+    </div>
+    <div>
+      <h2>التواصل</h2>
+      <p>الإسكندرية: أبيس 2 والحسينية</p>
+      <p>كل يوم من 10 صباحًا إلى 10 مساءً</p>
+      <a href="https://wa.me/201224274670" target="_blank" rel="noopener noreferrer" dir="ltr">01224274670</a>
+    </div>
+  </div>
+  <p class="legal">© NurseNow - تمريض منزلي، الإسكندرية</p>
+</footer>
+<a class="float" href="https://wa.me/201224274670" target="_blank" rel="noopener noreferrer">واتساب</a>
+<script src="js/nav.js" defer></script>
+<script src="js/booking.js" defer></script>
+</body>
+</html>
